@@ -1,5 +1,5 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom"
-import TopPage from "./pages/TopPage"
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import TopPage from "./pages/TopPage";
 
 const App = () => {
   return (
@@ -8,7 +8,7 @@ const App = () => {
         <Route index element={<TopPage />} />
       </Routes>
     </BrowserRouter>
-  )
-}
+  );
+};
 
-export default App
+export default App;
