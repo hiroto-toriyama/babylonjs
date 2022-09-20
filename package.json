@@ -11,6 +11,7 @@
     "test": ""
   },
   "dependencies": {
+    "@babylonjs/core": "^5.24.0",
     "@types/react-router-dom": "^5.3.3",
     "daisyui": "^2.29.0",
     "react": "^18.2.0",
