@@ -8,28 +8,12 @@ const TopPage = () => {
     const engine = new Engine(renderCanvas.current);
     const scene = new Scene(engine);
     const camera = new ArcRotateCamera("camera", -Math.PI / 2, Math.PI / 2.5, 3, new Vector3(0, 0, 0), scene);
-    camera.attachControl(renderCanvas, true);
+    camera.attachControl(renderCanvas);
     const light = new HemisphericLight("light", new Vector3(0, 1, 0), scene);
     const box = MeshBuilder.CreateBox("box", {}, scene);
     engine.runRenderLoop(() => {
       scene.render();
     });
-
-    const resize = () => {
-      scene.getEngine().resize();
-    };
-
-    if (window) {
-      window.addEventListener("resize", resize);
-    }
-
-    return () => {
-      scene.getEngine().dispose();
-
-      if (window) {
-        window.removeEventListener("resize", resize);
-      }
-    };
   }, [renderCanvas]);
 
   return (
