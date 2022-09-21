@@ -1,25 +1,14 @@
-import { useEffect, useRef } from "react";
-import { ArcRotateCamera, Engine, HemisphericLight, MeshBuilder, Scene, Vector3 } from '@babylonjs/core';
+import Box from "../components/box";
+import Village from "../components/Village";
 
 const TopPage = () => {
-  const renderCanvas = useRef(null);
-
-  useEffect(() => {
-    const engine = new Engine(renderCanvas.current);
-    const scene = new Scene(engine);
-    const camera = new ArcRotateCamera("camera", -Math.PI / 2, Math.PI / 2.5, 3, new Vector3(0, 0, 0), scene);
-    camera.attachControl(renderCanvas);
-    const light = new HemisphericLight("light", new Vector3(0, 1, 0), scene);
-    const box = MeshBuilder.CreateBox("box", {}, scene);
-    engine.runRenderLoop(() => {
-      scene.render();
-    });
-  }, [renderCanvas]);
-
   return (
     <div className="container mx-auto my-5">
       <div className="font-bold text-3xl my-5">Babyron.js</div>
-      <canvas ref={renderCanvas} className="w-full"></canvas>
+      <div className="flex flex-col gap-5">
+        <Box />
+        <Village />
+      </div>
     </div>
   );
 };
