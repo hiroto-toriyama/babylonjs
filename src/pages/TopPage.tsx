@@ -1,4 +1,4 @@
-import Box from "../components/box";
+import Box from "../components/Box";
 import Village from "../components/Village";
 
 const TopPage = () => {
